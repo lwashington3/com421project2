@@ -3,7 +3,6 @@
         xmlns:vm="using:Mockup.ViewModels"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:views="clr-namespace:Mockup.Views"
         xmlns:map="clr-namespace:Mapsui.UI.Avalonia;assembly=Mapsui.UI.Avalonia"
         mc:Ignorable="d" d:DesignWidth="1290" d:DesignHeight="2796"
         x:Class="Mockup.Views.MainWindow"
@@ -12,7 +11,8 @@
         Title="MobileID Mockup"
         Background="DimGray"
         Width="550"
-        Height="900">
+        Height="900"
+        CanResize="False">
 
     <Design.DataContext>
         <!-- This only sets the DataContext for the previewer in an IDE,
@@ -26,7 +26,7 @@
 			Height="360"/>
 	    <DockPanel Name="Panel">
         	<ScrollViewer
-		        AllowAutoHide="False"
+		        Height="540"
 		        Margin="1"
 		        Name="ScrollViewer"
         		VerticalScrollBarVisibility="Visible">
@@ -44,7 +44,8 @@
         			            Background="#F8F8F8">
         						<Canvas
         							Width="88"
-        							Height="88">
+        							Height="88"
+							        Loaded="CorrectCircles">
         							<Ellipse
         								Width="80"
         								Height="80"

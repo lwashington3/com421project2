@@ -1,10 +1,16 @@
+using System;
 using System.Linq;
 using System.Collections.Generic;
 using System.IO;
 using System.Text.Json;
+using Avalonia;
+using Avalonia.Collections;
 using Avalonia.Controls;
 using Avalonia.Input;
+using Avalonia.Interactivity;
+using Avalonia.LogicalTree;
 using Avalonia.Media;
+using Avalonia.Media.TextFormatting;
 using Mapsui;
 using Mapsui.Extensions;
 using Mapsui.Layers;
@@ -181,5 +187,52 @@ public partial class MainWindow : Window
 		StackPanel innerPanel = (StackPanel)((Border)panel.Children[1]).Child;
 		((TextBlock)innerPanel.Children[0]).Foreground = foreground;
 		((TextBlock)innerPanel.Children[1]).Foreground = foreground;
+	}
+
+	private void CorrectCircles(object? sender, RoutedEventArgs e)
+	{
+		Canvas canvas = (Canvas)sender;
+
+		foreach (Control control in canvas.Children)
+		{
+			if (control is TextBlock textBlock)
+			{
+				TextShaper textShaper = TextShaper.Current;
+				Typeface typeface = new Typeface(textBlock.FontFamily, textBlock.FontStyle, textBlock.FontWeight, textBlock.FontStretch);
+				ShapedBuffer shaped = textShaper.ShapeText(textBlock.Text, new TextShaperOptions(typeface.GlyphTypeface, textBlock.FontSize));
+				ShapedTextRun run = new ShapedTextRun(shaped, new GenericTextRunProperties(typeface, textBlock.FontSize));
+				Canvas.SetLeft(control, (canvas.Width - run.Size.Width) / 2);
+				Canvas.SetTop(control, (canvas.Height - run.Size.Height) / 2);
+			}
+			else
+			{
+				Canvas.SetLeft(control, (canvas.Width - control.Width) / 2);
+				Canvas.SetTop(control, (canvas.Height - control.Height) / 2);
+			}
+		}
+
+		// ItemsControl itemsControl = this.GetControl<ItemsControl>("LocationsControl");
+		// foreach (ILogical child in itemsControl.GetLogicalChildren())
+		// {
+		// 	IAvaloniaReadOnlyList<ILogical> logicalChildren = child.LogicalChildren;
+		// 	Canvas canvas = (Canvas) logicalChildren[0].LogicalChildren[0];
+		// 	foreach (Control control in canvas.Children)
+		// 	{
+		// 		if (control is TextBlock textBlock)
+		// 		{
+		// 			TextShaper textShaper = TextShaper.Current;
+		// 			Typeface typeface = new Typeface(textBlock.FontFamily, textBlock.FontStyle, textBlock.FontWeight, textBlock.FontStretch);
+		// 			ShapedBuffer shaped = textShaper.ShapeText(textBlock.Text, new TextShaperOptions(typeface.GlyphTypeface, textBlock.FontSize));
+		// 			ShapedTextRun run = new ShapedTextRun(shaped, new GenericTextRunProperties(typeface, textBlock.FontSize));
+		// 			Canvas.SetLeft(control, (canvas.Width - run.Size.Width) / 2);
+		// 			Canvas.SetTop(control, (canvas.Height - run.Size.Height) / 2);
+		// 		}
+		// 		else
+		// 		{
+		// 			Canvas.SetLeft(control, (canvas.Width - control.Width) / 2);
+		// 			Canvas.SetTop(control, (canvas.Height - control.Height) / 2);
+		// 		}
+		// 	}
+		// }
 	}
 }
