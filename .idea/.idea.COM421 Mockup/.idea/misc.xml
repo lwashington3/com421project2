@@ -1,8 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
-  <component name="GithubDefaultAccount">
-    <option name="defaultAccountId" value="97e77c05-bc49-4339-aac2-55007ed4be22" />
-  </component>
   <component name="MarkdownSettings">
     <enabledExtensions>
       <entry key="MermaidLanguageExtension" value="false" />

@@ -1,20 +1,20 @@
-using System;
 using System.Linq;
 using System.Collections.Generic;
 using System.IO;
-using System.Reflection;
 using System.Text.Json;
 using Avalonia.Controls;
+using Avalonia.Input;
+using Avalonia.Media;
 using Mapsui;
 using Mapsui.Extensions;
 using Mapsui.Layers;
-using Mapsui.Layers.AnimatedLayers;
 using Mapsui.Projections;
 using Mapsui.Providers;
 using Mapsui.Styles;
 using Mapsui.UI.Avalonia;
 using Mapsui.Widgets;
 using SkiaSharp;
+using Color = Avalonia.Media.Color;
 using Location = Mockup.Models.Location;
 
 namespace Mockup.Views;
@@ -22,13 +22,41 @@ namespace Mockup.Views;
 public partial class MainWindow : Window
 {
 	private IEnumerable<Location> _locations;
+	private MyLocationLayer _locationLayer;
 
 	public MainWindow()
 	{
 		InitializeComponent();
 		MapControl mapControl = this.FindControl<MapControl>("MapControl") ?? new MapControl();
 		mapControl.Map = CreateMap();
-		// Content = mapControl;
+		// mapControl.Map.Navigator.ViewportChanged += NavigatorOnViewportChanged;
+		mapControl.PointerReleased += NavigatorOnViewportChanged;
+	}
+
+	private void NavigatorOnViewportChanged(object? sender, PointerReleasedEventArgs e)
+	{
+		Viewport viewport;
+		if (sender is Viewport viewport1)
+		{
+			viewport = viewport1;
+		}
+		else if (sender is Navigator navigator)
+		{
+			viewport = navigator.Viewport;
+		}
+		else if (sender is MapControl mapControl)
+		{
+			viewport = mapControl.Map.Navigator.Viewport;
+		}
+		else
+		{
+			return;
+		}
+
+		MPoint center = new MPoint(viewport.CenterX, viewport.CenterY);
+		MPoint lonLat = SphericalMercator.ToLonLat(center);
+		Location.Center = lonLat;
+		// _locationLayer.UpdateMyLocation(lonLat);
 	}
 
 	public Map CreateMap()
@@ -42,9 +70,15 @@ public partial class MainWindow : Window
 			DataSource = new MemoryProvider(GetFeatures()),
 			IsMapInfoLayer = true
 		});
+		_locationLayer = new MyLocationLayer(map, Location.CenterIIT)
+		{
+			Name = "User Location",
+		};
+		// FIXME: Get the user's dot on the map working, it keeps glitching to (0, 0) on the map
+		// map.Layers.Add(_locationLayer);
 
 		// TODO: Set this to the device's Location to zoom in it where the person is, also set the resolutions to ^2 for it to be closer
-		map.Home = n => n.CenterOnAndZoomTo(SphericalMercator.FromLonLat(-87.626607, 41.834685).ToMPoint(), n.Resolutions[^3]);
+		map.Home = n => n.CenterOnAndZoomTo(Location.CenterIIT, n.Resolutions[^3]);
 		map.Widgets.Add(new MapInfoWidget(map));
 
 		return map;
@@ -119,5 +153,33 @@ public partial class MainWindow : Window
 			bitmap.Encode(wStream, SKEncodedImageFormat.Png, 100);
 		}
 		return memStream;
+	}
+
+	private void InputElement_OnPointerEntered(object? sender, PointerEventArgs e)
+	{
+		AdjustPanelColor((StackPanel)sender, new SolidColorBrush(new Color(255, 248, 248, 248)), new SolidColorBrush(new Color(255, 7, 7, 7)));
+	}
+
+	private void InputElement_OnPointerPressed(object? sender, PointerPressedEventArgs e)
+	{
+		AdjustPanelColor((StackPanel)sender, new SolidColorBrush(new Color(255, 248, 248, 248)), new SolidColorBrush(new Color(255, 7, 7, 7)));
+	}
+
+	private void InputElement_OnPointerReleased(object? sender, PointerReleasedEventArgs e)
+	{
+		AdjustPanelColor((StackPanel)sender, new SolidColorBrush(new Color(255, 7, 7, 7)), new SolidColorBrush(new Color(255, 248, 248, 248)));
+	}
+
+	private void InputElement_OnPointerExited(object? sender, PointerEventArgs e)
+	{
+		AdjustPanelColor((StackPanel)sender, new SolidColorBrush(new Color(255, 7, 7, 7)), new SolidColorBrush(new Color(255, 248, 248, 248)));
+	}
+
+	private void AdjustPanelColor(StackPanel panel, IBrush foreground, IBrush background)
+	{
+		panel.Background = background;
+		StackPanel innerPanel = (StackPanel)((Border)panel.Children[1]).Child;
+		((TextBlock)innerPanel.Children[0]).Foreground = foreground;
+		((TextBlock)innerPanel.Children[1]).Foreground = foreground;
 	}
 }

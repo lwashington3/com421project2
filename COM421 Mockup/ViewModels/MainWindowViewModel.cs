@@ -1,11 +1,21 @@
-﻿namespace Mockup.ViewModels;
+﻿using System;
+using System.Collections.ObjectModel;
+using Mockup.Models;
+
+namespace Mockup.ViewModels;
 
 public partial class MainWindowViewModel : ViewModelBase
 {
-	public LocationListViewModel LocationList { get; set;  }
+	public ObservableCollection<Location> Locations { get; set; }
 
 	public MainWindowViewModel()
 	{
-		LocationList = new LocationListViewModel();
+		Location.OnCreated += LocationAdded;
+		Locations = new ObservableCollection<Location>();
+	}
+
+	private void LocationAdded(Location location)
+	{
+		Locations.Add(location);
 	}
 }

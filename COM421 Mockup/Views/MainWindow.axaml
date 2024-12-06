@@ -21,12 +21,70 @@
     </Design.DataContext>
 
     <StackPanel>
-		<map:MapControl
+	    <map:MapControl
 			Name="MapControl"
 			Height="360"/>
-	    <views:LocationList
-		    HorizontalAlignment="Stretch"
-		    DockPanel.Dock="Bottom"/>
+	    <DockPanel Name="Panel">
+        	<ScrollViewer
+		        AllowAutoHide="False"
+		        Margin="1"
+		        Name="ScrollViewer"
+        		VerticalScrollBarVisibility="Visible">
+        		<ItemsControl Name="LocationsControl" ItemsSource="{Binding Locations}" DockPanel.Dock="Top">
+                    <ItemsControl.ItemTemplate>
+                    	<DataTemplate>
+                    		<StackPanel
+        			            Orientation="Horizontal"
+        			            Height="88"
+        			            Margin="3 2"
+			                    PointerEntered="InputElement_OnPointerEntered"
+			                    PointerPressed="InputElement_OnPointerPressed"
+			                    PointerExited="InputElement_OnPointerExited"
+			                    PointerReleased="InputElement_OnPointerReleased"
+        			            Background="#F8F8F8">
+        						<Canvas
+        							Width="88"
+        							Height="88">
+        							<Ellipse
+        								Width="80"
+        								Height="80"
+        								Fill="#529742"
+        								StrokeThickness="2"
+        								VerticalAlignment="Center"/>
+        							<TextBlock
+        								Canvas.Top="33.015625"
+        								Canvas.Left="23.73046875"
+        								Name="CircleText"
+        								Text="{Binding AbbreviatedID}"
+        								HorizontalAlignment="Center"
+        								VerticalAlignment="Center"/>
+        						</Canvas>
+                    			<Border Name="Border" Margin="5 2">
+                    				<StackPanel
+					                    Name="InnerPanel"
+        								VerticalAlignment="Center"
+								        Background="Transparent">
+                    					<TextBlock
+        						            Foreground="#070707"
+                    						FontSize="20"
+						                    Name="Name"
+                    						Margin="1 1 1 5"
+                    						Text="{Binding Name}"
+                    						VerticalAlignment="Stretch"/>
+                    					<TextBlock
+                    						Foreground="#070707"
+                    						FontSize="17"
+						                    Name="Id"
+                    						Text="{Binding ID}"
+                    						VerticalAlignment="Stretch"/>
+                    				</StackPanel>
+                    			</Border>
+                    		</StackPanel>
+                    	</DataTemplate>
+                    </ItemsControl.ItemTemplate>
+                </ItemsControl>
+        	</ScrollViewer>
+        </DockPanel>
     </StackPanel>
 
 </Window>
