@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AvaloniaProject">
+    <option name="projectPerEditor">
+      <map>
+        <entry key="COM421 Mockup/App.axaml" value="COM421 Mockup/COM421 Mockup.csproj" />
+        <entry key="COM421 Mockup/Views/Circle.axaml" value="COM421 Mockup/COM421 Mockup.csproj" />
+        <entry key="COM421 Mockup/Views/LocationList.axaml" value="COM421 Mockup/COM421 Mockup.csproj" />
+        <entry key="COM421 Mockup/Views/MainWindow.axaml" value="COM421 Mockup/COM421 Mockup.csproj" />
+        <entry key="COM421 Mockup/Views/Window1.axaml" value="COM421 Mockup/COM421 Mockup.csproj" />
+      </map>
+    </option>
+  </component>
+</project>

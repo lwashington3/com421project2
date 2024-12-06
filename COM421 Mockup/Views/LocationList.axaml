@@ -1,0 +1,60 @@
+<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:vm="using:Mockup.ViewModels"
+             mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+             x:DataType="vm:LocationListViewModel"
+             x:Class="Mockup.Views.LocationList">
+
+	<DockPanel Name="Panel">
+		<ScrollViewer Margin="1"
+		              VerticalScrollBarVisibility="Visible">
+			<ItemsControl ItemsSource="{Binding Locations}" DockPanel.Dock="Top">
+            	<ItemsControl.ItemTemplate>
+            		<DataTemplate>
+            			<StackPanel
+				            Orientation="Horizontal"
+				            Height="88"
+				            Margin="3 2"
+				            Background="#F8F8F8">
+							<Canvas
+								Width="88"
+								Height="88">
+								<Ellipse
+									Width="80"
+									Height="80"
+									Fill="#529742"
+									StrokeThickness="2"
+									VerticalAlignment="Center"/>
+								<TextBlock
+									Canvas.Top="31"
+									Canvas.Left="23"
+									Text="{Binding AbbreviatedID}"
+									HorizontalAlignment="Center"
+									VerticalAlignment="Center"/>
+							</Canvas>
+            				<Border Margin="5 2">
+            					<StackPanel
+						            VerticalAlignment="Center">
+            						<TextBlock
+							            Foreground="#050505"
+            							FontSize="20"
+            							Margin="1 1 1 5"
+            							Text="{Binding Name}"
+            							VerticalAlignment="Stretch"/>
+            						<TextBlock
+            							Foreground="#050505"
+            							FontSize="17"
+            							Text="{Binding ID}"
+            							VerticalAlignment="Stretch"/>
+            					</StackPanel>
+            				</Border>
+            			</StackPanel>
+            		</DataTemplate>
+            	</ItemsControl.ItemTemplate>
+            </ItemsControl>
+		</ScrollViewer>
+	</DockPanel>
+
+</UserControl>

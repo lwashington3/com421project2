@@ -1,0 +1,386 @@
+[
+	{
+		"name": "Tower Desk East Reader",
+		"id": 2308,
+		"longitude": -87.62705542545642,
+		"latitude": 41.83130659709132
+	},
+	{
+		"name": "Galvin East Exterior Rdr",
+		"id": 2424,
+		"longitude": -87.62803039420102,
+		"latitude": 41.833853965215006
+	},
+	{
+		"name": "Galvin Desk Reader",
+		"id": 2425,
+		"longitude": -87.62813405452951,
+		"latitude": 41.83387835535265
+	},
+	{
+		"name": "D5 Parking Gate Out",
+		"id": 49901004,
+		"longitude": -87.62557659490881,
+		"latitude": 41.83276828528364
+	},
+	{
+		"name": "D5 Parking Gate In",
+		"id": 3621,
+		"longitude": -87.62560274644567,
+		"latitude": 41.83277128303301
+	},
+	{
+		"name": "E1 North Entrance",
+		"id": 20501405,
+		"longitude": null,
+		"latitude": null
+	},
+	{
+		"name": "E1 West Entrance",
+		"id": 20501406,
+		"longitude": null,
+		"latitude": null
+	},
+	{
+		"name": "E1 South East Entrance",
+		"id": 20501401,
+		"longitude": null,
+		"latitude": null
+	},
+	{
+		"name": "E1 South West Entrance",
+		"id": 20501402,
+		"longitude": null,
+		"latitude": null
+	},
+	{
+		"name": "Stuart Building 112j (Comp Lab)",
+		"id": 20101006,
+		"longitude": null,
+		"latitude": null
+	},
+	{
+		"name": "Stuart Building South Exterior",
+		"id": 20101303,
+		"longitude": -87.62738054210581,
+		"latitude": 41.83856891238741
+	},
+	{
+		"name": "Stuart Building Lobby Stairwell",
+		"id": 20101302,
+		"longitude": null,
+		"latitude": null
+	},
+	{
+		"name": "Stuart Building Lobby Interior",
+		"id": 20101301,
+		"longitude": -87.62740669364267,
+		"latitude": 41.838578903979126
+	},
+	{
+		"name": "Life Science West Entrance",
+		"id": 20301401,
+		"longitude": null,
+		"latitude": null
+	},
+	{
+		"name": "Wishnick 119 Door",
+		"id": 2357,
+		"longitude": null,
+		"latitude": null
+	},
+	{
+		"name": "A2 Parking Gate Entrance",
+		"id": 29901103,
+		"longitude": -87.62623656912581,
+		"latitude": 41.83841968979914
+	},
+	{
+		"name": "Crown Upper Level Ext South",
+		"id": 30501302,
+		"longitude": null,
+		"latitude": null
+	},
+	{
+		"name": "C2 Parking In Rdr",
+		"id": 2427,
+		"longitude": -87.62885691289857,
+		"latitude": 41.833662784630725
+	},
+	{
+		"name": "KE Lower Desk Reader",
+		"id": 2298,
+		"longitude": null,
+		"latitude": null
+	},
+	{
+		"name": "D1 Parking Gate Entrance",
+		"id": 49901101,
+		"longitude": -87.62529799403474,
+		"latitude": 41.83449705292108
+	},
+	{
+		"name": "TechNorth South Door In",
+		"id": 30901001,
+		"longitude": null,
+		"latitude": null
+	},
+	{
+		"name": "CLC Desk Reader",
+		"id": 50101002,
+		"longitude": null,
+		"latitude": null
+	},
+	{
+		"name": "Tower 03 Health Services Main",
+		"id": 31303001,
+		"longitude": null,
+		"latitude": null
+	},
+	{
+		"name": "Kaplan West Main Door",
+		"id": 21701013,
+		"longitude": null,
+		"latitude": null
+	},
+	{
+		"name": "Tower 14 C501",
+		"id": 31314005,
+		"longitude": null,
+		"latitude": null
+	},
+	{
+		"name": "Tower Desk West Reader",
+		"id": 2309,
+		"longitude": null,
+		"latitude": null
+	},
+	{
+		"name": "Keating East Entrance",
+		"id": 2302,
+		"longitude": null,
+		"latitude": null
+	},
+	{
+		"name": "Life Science South Entrance",
+		"id": 20301403,
+		"longitude": null,
+		"latitude": null
+	},
+	{
+		"name": "Crown Lower Level Comp Lab",
+		"id": 30500001,
+		"longitude": null,
+		"latitude": null
+	},
+	{
+		"name": "Alumni Hall East External",
+		"id": 20801301,
+		"longitude": null,
+		"latitude": null
+	},
+	{
+		"name": "Crown Lower Level Exterior Eas",
+		"id": 30500301,
+		"longitude": null,
+		"latitude": null
+	},
+	{
+		"name": "Tech Central West Entrance",
+		"id": 31001403,
+		"longitude": null,
+		"latitude": null
+	},
+	{
+		"name": "Crown Lower Level Exterior Eas",
+		"id": 320500301,
+		"longitude": null,
+		"latitude": null
+	},
+	{
+		"name": "Crown Lower Level Exterior Wes",
+		"id": 30500302,
+		"longitude": null,
+		"latitude": null
+	},
+	{
+		"name": "Tech North Room 110",
+		"id": 209001002,
+		"longitude": null,
+		"latitude": null
+	},
+	{
+		"name": "Tech North Room 110",
+		"id": 30901003,
+		"longitude": null,
+		"latitude": null
+	},
+	{
+		"name": "SB 112 Computer Lab",
+		"id": 20101009,
+		"longitude": null,
+		"latitude": null
+	},
+	{
+		"name": "Tech Central Desk #2",
+		"id": 31001402,
+		"longitude": null,
+		"latitude": null
+	},
+	{
+		"name": "TechNorth North Door",
+		"id": 30901005,
+		"longitude": null,
+		"latitude": null
+	},
+	{
+		"name": "Kaplan East Main Door",
+		"id": 21701012,
+		"longitude": null,
+		"latitude": null
+	},
+	{
+		"name": "TechNorth South Door Out",
+		"id": 30901002,
+		"longitude": null,
+		"latitude": null
+	},
+	{
+		"name": "Tech South Lobby Door",
+		"id": 31001004,
+		"longitude": null,
+		"latitude": null
+	},
+	{
+		"name": "A2 Parking Gate Exit",
+		"id": 29901104,
+		"longitude": -87.62628990831219,
+		"latitude": 41.83841968979914
+	},
+	{
+		"name": "Life Science West Entrance 2",
+		"id": 20301402,
+		"longitude": null,
+		"latitude": null
+	},
+	{
+		"name": "Tech Central Desk #1",
+		"id": 31001401,
+		"longitude": null,
+		"latitude": null
+	},
+	{
+		"name": "SH SE Door",
+		"id": 2450,
+		"longitude": null,
+		"latitude": null
+	},
+	{
+		"name": "Crown Upper Level Ext North",
+		"id": 30501301,
+		"longitude": null,
+		"latitude": null
+	},
+	{
+		"name": "Alumni Hall 218 OTS Lab",
+		"id": 20802001,
+		"longitude": null,
+		"latitude": null
+	},
+	{
+		"name": "Wishnick Hall SE Exterior",
+		"id": 21101002,
+		"longitude": null,
+		"latitude": null
+	},
+	{
+		"name": "CLC West Desk Reader",
+		"id": 50101003,
+		"longitude": null,
+		"latitude": null
+	},
+	{
+		"name": "Tower 14 C7-1",
+		"id": 31314006,
+		"longitude": null,
+		"latitude": null
+	},
+	{
+		"name": "C2 Parking Out Rdr",
+		"id": 2426,
+		"longitude": -87.62882968609382,
+		"latitude": 41.833662784630725
+	},
+	{
+		"name": "A3 Parking Gate Entrance",
+		"id": 29901101,
+		"longitude": null,
+		"latitude": null
+	},
+	{
+		"name": "A3 Parking Gate Exit",
+		"id": 29901102,
+		"longitude": null,
+		"latitude": null
+	},
+	{
+		"name": "Alumni Hall West External",
+		"id": 20801302,
+		"longitude": null,
+		"latitude": null
+	},
+	{
+		"name": "D2 Parking Gate Out",
+		"id": 49901002,
+		"longitude": null,
+		"latitude": null
+	},
+	{
+		"name": "Wishnick Hall NW Exterior",
+		"id": 21101001,
+		"longitude": null,
+		"latitude": null
+	},
+	{
+		"name": "D2 Parking Gate In Reader",
+		"id": 49901001,
+		"longitude": null,
+		"latitude": null
+	},
+	{
+		"name": "D1 Parking Gate Exit",
+		"id": 49901102,
+		"longitude": -87.62524971427439,
+		"latitude": 41.83449705292108
+	},
+	{
+		"name": "Wishnick 119 Door",
+		"id": 2352,
+		"longitude": null,
+		"latitude": null
+	},
+	{
+		"name": "TWR14 SSB Main",
+		"id": 31314002,
+		"longitude": null,
+		"latitude": null
+	},
+	{
+		"name": "Tech Central East Entrance",
+		"id": 31001400,
+		"longitude": null,
+		"latitude": null
+	},
+	{
+		"name": "PH 219A (CHBE Computer Lab)",
+		"id": 21002003,
+		"longitude": null,
+		"latitude": null
+	},
+	{
+		"name": "PH West Door",
+		"id": 2453,
+		"longitude": null,
+		"latitude": null
+	}
+]
