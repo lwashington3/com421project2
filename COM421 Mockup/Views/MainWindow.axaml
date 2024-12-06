@@ -30,7 +30,9 @@
 		        Margin="1"
 		        Name="ScrollViewer"
         		VerticalScrollBarVisibility="Visible">
-        		<ItemsControl Name="LocationsControl" ItemsSource="{Binding Locations}" DockPanel.Dock="Top">
+		        <ItemsControl
+			        Name="LocationsControl"
+			        ItemsSource="{Binding Locations}">
                     <ItemsControl.ItemTemplate>
                     	<DataTemplate>
                     		<StackPanel

@@ -19,6 +19,7 @@ using Mapsui.Providers;
 using Mapsui.Styles;
 using Mapsui.UI.Avalonia;
 using Mapsui.Widgets;
+using Mockup.ViewModels;
 using SkiaSharp;
 using Color = Avalonia.Media.Color;
 using Location = Mockup.Models.Location;
@@ -35,11 +36,10 @@ public partial class MainWindow : Window
 		InitializeComponent();
 		MapControl mapControl = this.FindControl<MapControl>("MapControl") ?? new MapControl();
 		mapControl.Map = CreateMap();
-		// mapControl.Map.Navigator.ViewportChanged += NavigatorOnViewportChanged;
-		mapControl.PointerReleased += NavigatorOnViewportChanged;
+		mapControl.PointerReleased += (sender, args) => UpdateCenter(sender);
 	}
 
-	private void NavigatorOnViewportChanged(object? sender, PointerReleasedEventArgs e)
+	public void UpdateCenter(object? sender)
 	{
 		Viewport viewport;
 		if (sender is Viewport viewport1)
@@ -62,6 +62,7 @@ public partial class MainWindow : Window
 		MPoint center = new MPoint(viewport.CenterX, viewport.CenterY);
 		MPoint lonLat = SphericalMercator.ToLonLat(center);
 		Location.Center = lonLat;
+		((MainWindowViewModel)DataContext).Sort();
 		// _locationLayer.UpdateMyLocation(lonLat);
 	}
 
@@ -210,29 +211,5 @@ public partial class MainWindow : Window
 				Canvas.SetTop(control, (canvas.Height - control.Height) / 2);
 			}
 		}
-
-		// ItemsControl itemsControl = this.GetControl<ItemsControl>("LocationsControl");
-		// foreach (ILogical child in itemsControl.GetLogicalChildren())
-		// {
-		// 	IAvaloniaReadOnlyList<ILogical> logicalChildren = child.LogicalChildren;
-		// 	Canvas canvas = (Canvas) logicalChildren[0].LogicalChildren[0];
-		// 	foreach (Control control in canvas.Children)
-		// 	{
-		// 		if (control is TextBlock textBlock)
-		// 		{
-		// 			TextShaper textShaper = TextShaper.Current;
-		// 			Typeface typeface = new Typeface(textBlock.FontFamily, textBlock.FontStyle, textBlock.FontWeight, textBlock.FontStretch);
-		// 			ShapedBuffer shaped = textShaper.ShapeText(textBlock.Text, new TextShaperOptions(typeface.GlyphTypeface, textBlock.FontSize));
-		// 			ShapedTextRun run = new ShapedTextRun(shaped, new GenericTextRunProperties(typeface, textBlock.FontSize));
-		// 			Canvas.SetLeft(control, (canvas.Width - run.Size.Width) / 2);
-		// 			Canvas.SetTop(control, (canvas.Height - run.Size.Height) / 2);
-		// 		}
-		// 		else
-		// 		{
-		// 			Canvas.SetLeft(control, (canvas.Width - control.Width) / 2);
-		// 			Canvas.SetTop(control, (canvas.Height - control.Height) / 2);
-		// 		}
-		// 	}
-		// }
 	}
 }

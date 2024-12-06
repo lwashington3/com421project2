@@ -88,8 +88,7 @@ public class Location : INotifyPropertyChanged
 
 	public double DistanceTo(MPoint point)
 	{
-		(double longitude, double latitude) = SphericalMercator.ToLonLat(point.X, point.Y);
-		return Math.Sqrt(Math.Pow(longitude - Longitude, 2) + Math.Pow(latitude - Latitude, 2));
+		return Math.Sqrt(Math.Pow(point.X - Longitude, 2) + Math.Pow(point.Y - Latitude, 2));
 	}
 
 	public static bool operator <(Location a, Location b)
