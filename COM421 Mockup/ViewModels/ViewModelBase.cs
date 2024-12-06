@@ -1,7 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using CommunityToolkit.Mvvm.ComponentModel;
-using Mockup.Models;
+﻿using CommunityToolkit.Mvvm.ComponentModel;
 
 namespace Mockup.ViewModels;
 

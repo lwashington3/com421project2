@@ -1,14 +1,10 @@
-using System;
 using System.Linq;
 using System.Collections.Generic;
 using System.IO;
 using System.Text.Json;
-using Avalonia;
-using Avalonia.Collections;
 using Avalonia.Controls;
 using Avalonia.Input;
 using Avalonia.Interactivity;
-using Avalonia.LogicalTree;
 using Avalonia.Media;
 using Avalonia.Media.TextFormatting;
 using Mapsui;
@@ -198,6 +194,7 @@ public partial class MainWindow : Window
 		{
 			if (control is TextBlock textBlock)
 			{
+				// https://stackoverflow.com/questions/78945114/in-avalonia-how-do-i-calculate-the-size-of-a-text-without-rendering-it
 				TextShaper textShaper = TextShaper.Current;
 				Typeface typeface = new Typeface(textBlock.FontFamily, textBlock.FontStyle, textBlock.FontWeight, textBlock.FontStretch);
 				ShapedBuffer shaped = textShaper.ShapeText(textBlock.Text, new TextShaperOptions(typeface.GlyphTypeface, textBlock.FontSize));

@@ -4,7 +4,6 @@ using Avalonia.Data.Core;
 using Avalonia.Data.Core.Plugins;
 using System.Linq;
 using Avalonia.Markup.Xaml;
-using Mockup.Models;
 using Mockup.ViewModels;
 using Mockup.Views;
 

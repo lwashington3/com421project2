@@ -5,7 +5,7 @@ using Mockup.Models;
 
 namespace Mockup.ViewModels;
 
-public partial class MainWindowViewModel : ViewModelBase
+public class MainWindowViewModel : ViewModelBase
 {
 	public ObservableCollection<Location> Locations { get; set; }
 
