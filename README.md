@@ -8,3 +8,6 @@ If the program is not pre-built, you can build it with [JetBrains Rider](https:/
 
 Below are additional image representations that we thought might be useful: 
 ![The Hawk Card within the Apple Wallet](/images/Hawk-Wallet.png)
+
+## Errors:
+If you run into an error complaining about `locations` or `locations.json`, I didn't upload that file because it's all information I took from MobileID, and I'm not sure how appropriate it is to upload.
